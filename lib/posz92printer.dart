@@ -5,6 +5,8 @@ import 'posz92printer_platform_interface.dart';
 enum AlignmentPrint { center, left, right }
 
 class PrinterPosSystem {
+  Future<bool> bonded() => Posz92printerPlatform.instance.bonded();
+
   Future<bool?> printText(
       {required String text,
       AlignmentPrint alignment = AlignmentPrint.left,

@@ -60,6 +60,12 @@ public class Posz92printerPlugin implements FlutterPlugin, MethodCallHandler, Ac
         mDriverManager = DriverManager.getInstance();
         mPrinter = mDriverManager.getPrinter();
         int printStatus = mPrinter.getPrinterStatus();
+
+       if(call.method.equals("bonded")){
+           result.success(printStatus ==SdkResult.SDK_OK );
+           return;
+       }
+
         if (printStatus == SdkResult.SDK_PRN_STATUS_PAPEROUT) {
             Toast.makeText(activity, "Out of paper", Toast.LENGTH_SHORT).show();
             result.success(false);

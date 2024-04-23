@@ -12,7 +12,10 @@ class MethodChannelPosz92printer extends Posz92printerPlatform {
   @visibleForTesting
   final methodChannel = const MethodChannel('posz92printer');
 
-  @override
+  @override 
+  Future<bool> bonded() => methodChannel.invokeMethod<bool>('bonded', {});
+  
+  @override 
   Future<bool?> printText({
     required String text,
     AlignmentPrint alignment = AlignmentPrint.left,
