@@ -62,7 +62,7 @@ public class Posz92printerPlugin implements FlutterPlugin, MethodCallHandler, Ac
         int printStatus = mPrinter.getPrinterStatus();
 
        if(call.method.equals("bonded")){
-           if(printStatus == SdkResult.SDK_OK) {
+           if(printStatus >= SdkResult.SDK_OK) {
                result.success(true);
            }else{
                result.success(false);
