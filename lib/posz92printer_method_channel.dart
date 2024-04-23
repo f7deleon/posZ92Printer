@@ -16,6 +16,7 @@ class MethodChannelPosz92printer extends Posz92printerPlatform {
   Future<bool?> bonded() async { 
     return await methodChannel.invokeMethod<bool>('bonded', {});
   }
+  
   @override 
   Future<bool?> printText({
     required String text,
