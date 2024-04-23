@@ -25,10 +25,10 @@ abstract class Posz92printerPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<bool> bonded() {
+  Future<bool?> bonded() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
-  
+
   Future<bool?> printText({
     required String text,
     AlignmentPrint alignment = AlignmentPrint.left,
